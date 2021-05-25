@@ -1,0 +1,835 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+   /* General Styles */
+
+html {
+  font-size: 16px;
+}
+   
+body {
+  font-family: 'Lato', sans-serif; 
+  font-size: 1em;
+  text-align: left;
+  color: #F2EFDC;
+
+}
+
+  ul, 
+  ol {
+  list-style-type: none;
+}
+   
+a {
+  color: #F2EFDC;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  color: #E3D1A6;
+}
+
+h2{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.875em;
+  font-weight: 500;
+}
+
+
+
+p {
+  font-size: .875em;
+  line-height: 1.25em;
+  color:#750021;
+}
+
+img {
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+address p{
+  font-size: .975em;
+  line-height: 1.50em;
+}
+
+/* -------------------- Base - Styles-------------------- */
+.content-wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+/* -------------------- Base - Header-Footer - Styles-------------------- */
+
+
+ /* Hamburger-Menu-Styles.*/
+  
+/* header */
+.header {
+  position: fixed;
+  width: 100%;
+  /*background-color: #262626; this is a background-color version*/
+  /* Add blured background to menu*/
+  background-color: rgba(97, 92, 92, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 3;
+}
+ 
+.header ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-bottom: 1px solid rgba(10, 8, 4, 0.4);
+  border-right: 1px solid rgba(10, 8, 4, 0.4);
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  
+  color: #F2EFDC;
+  background-color: rgba(112, 13, 43, 0.5);
+}
+
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+.header .menu-icon {
+  float: right;
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background:rgba(242, 239, 220);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: rgba(242, 239, 220);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  background: #750021;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  background: #750021;
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}/* Hamburger-Menu-Styles-end.*/
+
+/*footer*/
+footer {
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  text-align: center;
+  flex-direction: column;
+}
+  
+footer p {
+  margin: 0;
+  color:#F2EFDC;
+}
+  
+footer .content-wrapper {
+  width: 55%;
+  margin: 0 0 10px;
+}
+  
+footer .contact {
+   margin-bottom: 30px;
+}
+  
+footer .social-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+  
+footer .social-icons p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background-color: #750021;
+  margin: 5px 20px;
+}
+
+footer .social-icons p i {
+  font-size: 1em;
+}
+
+footer .copyright {
+  margin: 0 0 100px;
+}
+/* Common footer-Styles-end.*/
+
+/*--------------------Mobile Styles - Homepage-----------------------*/
+
+/* Hero-Area-Styles.*/
+.hero-area {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  background: url('../img/hero-img.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+/* Common styles for .hero-area from Home Page and .hero-area-2 from Gallery and Services pages */
+.hero-area .content-wrapper
+.hero-area-2 .content-wrapper {
+  flex-flow: nowrap;
+}
+
+.hero-area h1, .hero-area figure {
+  width: 40%;
+  margin-top: 180px;
+  margin-bottom: 100px;
+}
+
+.h1-2nd-color {
+  color:#F2EFDC;
+}
+
+/* Common styles for .hero-area from Home Page and .hero-area-2 from Gallery and Services pages */
+.hero-area h1,
+.hero-area-2 h1 {
+  text-align: right;
+}
+
+.hero-area figure,
+.hero-area-2 figure {
+  padding-left: 10px;
+}
+
+/* Whatsapp-btn-Styles.*/
+.floating-btn,
+.floating-btn-2 {
+  position:fixed;
+  width:50px;
+	height:50px;
+	bottom:4px;
+	right:40px;
+	background-color:#750021;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+  margin-bottom: 300px;
+  
+  will-change: transform;
+  transition: transform 450ms;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-10px);
+  will-change: transform;
+  transition: transform 450ms;
+}
+
+.my-float{
+	margin-top:10px;
+}
+
+/* Slideshow-area-Styles.*/
+.auto-slider{
+  position: relative;
+  box-sizing: content-box;
+  display: inline-block;
+  width: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Clear floats after  slider */
+.auto-slider::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 25s sliding ease infinite; 
+}
+
+/* Slider indicator */
+.indicator{
+  width: 100%;
+  max-width: 720px;
+  height: 6px;
+  background: #750021;;
+  position: absolute;
+  bottom: 0;
+  animation: indicating 5s ease infinite; 
+}
+
+/* The animation code */
+@keyframes sliding{
+          0%{left: 0%; }
+          20%{left: -100%;}
+          40%{left: -200%;}
+          60%{left: -300%;}
+          80%{left: -400%;}
+          100%{left: 0%;}
+      }        
+      
+@keyframes indicating{
+          from{
+              left: -100%;
+          }
+          to{
+              left: 0;
+          }
+}  
+
+/* Reviews-area-Styles.*/
+
+/* Style the reviews container with a rounded border, colored background */
+.reviews {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: #E3D1A6;
+}
+
+article{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%; 
+  background: #F2EFDC;
+  border: 2px solid #750021;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  margin:10px 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+article img {
+  width:90px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+article span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+article p {
+  margin:0;
+  line-height: 1.5rem;
+}
+
+/*---------------- Common styles for Gallery and Services pages ----------------------*/
+
+/* Hero-area-2 is a different hero image and style from Home-Page*/
+.hero-area-2 {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  background: url('../img/hero-img-2.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 395px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.hero-area-2 .content-wrapper {
+  margin-top: 60px;
+}
+.hero-area-2 h1 {
+  width: 55%;
+}
+.hero-area-2 figure {
+  width: 30%;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+.hero-area-2 h2 {
+  margin: 70px 180px 5px 0;
+  color:#262626;
+  text-transform: uppercase;
+}
+
+/* Whatsapp-btn-2 Styles*/
+/* Fixes the Whatsapp-btn-2 possition*/
+.floating-btn-2 {
+  margin-bottom: 390px; 
+}
+
+/*--------------------Mobile Styles - Gallery - Page-----------------------*/
+
+/* The-Grid-area-Styles.*/
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F2EFDC;
+  border: 2px solid #750021;;
+  padding: 5px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 5px;
+  transition: all .25s ease-in-out;
+}
+.gallery p {
+  margin: 15px 0;
+  padding: 0;
+  text-align: center;
+}
+ 
+.gallery-item:hover {
+  filter: none;
+  transform: scale(1.04);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  gap: 20px;
+  padding: 20px;
+  grid-auto-flow: dense;
+  padding-top: 60px;
+  background-color: #E3D1A6;
+}
+
+/*--------------------Mobile Styles - Services - Page-----------------------*/
+
+
+.services {
+  min-height: 300px;
+  background-color: #E3D1A6;
+}
+
+/* Clear floats after container */
+.services-container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Float images inside the container to the left. */
+.services-container img {
+  float: left;
+  width: 60%;
+ 
+}
+
+.services-container ul {
+  float: left;
+  padding:0;
+  margin-top: 200px;
+}
+
+.services li {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.675em;
+  font-weight: 400;
+  color: #750021;
+  text-transform: uppercase;
+  line-height: 5.7rem;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+/* Add media queries for responsiveness. This will center both the text and the image inside the container */
+
+
+   @media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+/* 48em = 768px Hamburger menu styles*/
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+/* Reviews styles*/
+
+  .reviews article {
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+
+  /* grid styles*/
+
+  .wide {
+    grid-column: span 2;
+  }
+  
+  .tall {
+    grid-row: span 2;
+  }
+}
+
+
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
