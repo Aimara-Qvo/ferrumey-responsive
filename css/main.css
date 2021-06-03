@@ -107,17 +107,32 @@ ol {
 
 a {
   color: #F2EFDC;
+  text-decoration: none;
 }
 
 h1 {
   font-family: 'Bebas Neue', cursive;
   color: #E3D1A6;
+  font-size: 1.75em;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 h2 {
   font-family: 'Bebas Neue', cursive;
   font-size: 1.875em;
   font-weight: 500;
+  color: #262626;
+}
+
+h3,
+h4 {
+  font-family: 'Bebas Neue', cursive;
+  margin: 20px 0;
+  font-size: 1.125em;
+  font-weight: 500;
+  margin: 20px,0;
+  letter-spacing: 1.6px;
 }
 
 p {
@@ -149,8 +164,7 @@ address p {
   margin: 50px 0;
 }
 
-/* -------------------- Base - Header-Footer - Styles-------------------- */
-
+/* -------------------- Base - Header-Hero-Footer - Styles-------------------- */
 
 /* Hamburger-Menu-Styles.*/
 
@@ -158,10 +172,11 @@ address p {
 .header {
   position: fixed;
   width: 100%;
-  /*background-color: #262626; this is a background-color version*/
+ 
   /* Add blurred background to menu*/
   background-color: rgba(97, 92, 92, 0.8);
   backdrop-filter: blur(8px);
+
   z-index: 3;
 }
 
@@ -200,7 +215,7 @@ address p {
 
 /* menu icon */
 .header .menu-icon {
-  float: right;
+  
   cursor: pointer;
   display: inline-block;
   padding: 28px 20px;
@@ -262,9 +277,7 @@ address p {
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
-}
-
-/* Hamburger-Menu-Styles-end.*/
+}/* Hamburger-Menu-Styles-end.*/
 
 /*footer*/
 footer {
@@ -284,7 +297,7 @@ footer p {
 
 footer .content-wrapper {
   width: 55%;
-  margin: 50px 0;
+  
 }
 
 footer .contact {
@@ -315,183 +328,156 @@ footer .social-icons p i {
 }
 
 footer .copyright {
-  margin: 0 0 100px;
-}
+  margin: 50px 0 0;
+}/* Common footer-Styles-end.*/
 
-/* Common footer-Styles-end.*/
 
-/*--------------------Mobile Styles - Homepage-----------------------*/
-
-/* Hero-Area-Styles.*/
+/* Common Hero-Area-Styles.*/
 .hero-area {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   flex-flow: row wrap;
   background: url('../img/hero-img.jpg') center no-repeat;
   background-size: cover;
   min-height: 500px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Common styles for .hero-area from Home Page and .hero-area-2 from Gallery and Services pages */
-.hero-area .content-wrapper,
-.hero-area-2 .content-wrapper {
+.hero-area .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.hero-top {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 
-.hero-area h1,
-.hero-area figure {
-  width: 35%;
+.hero-top h1,
+.hero-top figure {
+  width: 45%;
 }
 
+/*Style for the hero h1 span color*/
 .h1-2nd-color {
   color: #F2EFDC;
 }
 
-/* Common styles for .hero-area from Home Page and .hero-area-2 from Gallery and Services pages */
-.hero-area h1,
-.hero-area-2 h1 {
-  font-size: 1.75em;
-  font-weight: 500;
-  line-height: 1.2;
+.hero-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
-/* Whatsapp-btn-Styles.*/
-.floating-btn,
-.floating-btn-2 {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  bottom: 4px;
-  right: 40px;
-  background-color: #750021;
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
-  margin-bottom: 300px;
+.hero-bottom h2 {
+  text-transform: uppercase;
+  padding: 70px 0 0;
+  margin: 20px;
+}
 
+/* WhatsApp-btn-Styles.*/
+.whatsapp-btn {
+  position:fixed;
+	width:50px;
+	height:50px;
+	bottom:40px;
+  right:40px;
+  
+	background-color:#750021;
+  color:#F2EFDC;
+  box-shadow: 0 8px 6px -6px black;
+  margin-bottom: 300px;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+  
+  z-index:100;
+  
+  
   will-change: transform;
   transition: transform 450ms;
-  box-shadow: 0 8px 6px -6px black;
 }
 
 .whatsapp-btn:hover {
+  transition: transform 125ms;
   transform: translateY(-10px);
-  will-change: transform;
-  transition: transform 450ms;
 }
 
 .my-float {
   margin-top: 10px;
 }
-
-/* Slideshow-area-Styles.
-.auto-slider {
-  position: relative;
-  box-sizing: content-box;
-  display: inline-block;
-  width: 100%;
-  height: 240px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 4px;
-  background-color: #E3D1A6;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-}
-
-/* Clear floats after  slider 
-.auto-slider::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+/*--------------------Mobile Styles - Homepage-----------------------*/
+/* Slideshow-area-Styles.*/
 
 #slider {
   overflow: hidden;
+  padding: 8px 0;
+  background-color: #E3D1A6;
+  }
+
+#slider figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row-wrap;
+	position: relative;
+	width: 500%;
+	margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
 }
 
 #slider figure img {
-  width: 20%;
+	width: 20%;
   float: left;
 }
 
-#slider figure {
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 25s sliding ease infinite;
+@keyframes slider {
+	0% {
+		left: 0;
+	}
+	20% {
+		left: 0;
+	}
+	25% {
+		left: -100%;
+	}
+	45% {
+		left: -100%;
+	}
+	50% {
+		left: -200%;
+	}
+	70% {
+		left: -200%;
+	}
+	75% {
+		left: -300%;
+	}
+	95% {
+		left: -300%;
+	}
+	100% {
+		left: -400%;
+	}
 }
 
-/* Slider indicator 
-.indicator {
-  width: 100%;
-  max-width: 720px;
-  height: 6px;
-  background: #750021;
-  position: absolute;
-  bottom: 0;
-  animation: indicating 5s ease infinite;
-}
+/*Reviews-area-Styles.*/
 
-/* The animation code 
-@keyframes sliding {
-  0% {
-    left: 0%;
-  }
-
-  20% {
-    left: -100%;
-  }
-
-  40% {
-    left: -200%;
-  }
-
-  60% {
-    left: -300%;
-  }
-
-  80% {
-    left: -400%;
-  }
-
-  100% {
-    left: 0%;
-  }
-}
-
-@keyframes indicating {
-  from {
-    left: -100%;
-  }
-
-  to {
-    left: 0;
-  }
-}*/
-
-
-
-
-
-
-
-/* Reviews-area-Styles.*/
-
-/* Style the reviews container with a rounded border, colored background */
+/* Style the reviews container with a colored background */
 .reviews {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
   background-color: #E3D1A6;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
 }
 
 .reviews .content-wrapper {
@@ -501,7 +487,7 @@ footer .copyright {
   flex-direction: column;
 }
 
-article {
+.reviews article {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -516,64 +502,25 @@ article {
   text-align: center;
 }
 
-article img {
+.reviews article img {
   width: 90px;
   margin: auto;
   border-radius: 50%;
 }
 
-article .client-name {
+.reviews article .client-name {
   font-size: 25px;
   font-weight: 700;
   margin-right: 15px;
 }
 
-article .client-position {
+.reviews article .client-position {
   font-weight: 700;
 }
 
-article p {
+.reviews article p {
   margin: 0;
   line-height: 1.5rem;
-}
-
-/*---------------- Common styles for Gallery and Services pages ----------------------*/
-
-/* Hero-area-2 is a different hero image and style from Home-Page*/
-.hero-area-2 {
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-  background: url('../img/hero-img-2.jpg') center no-repeat;
-  background-size: cover;
-  min-height: 395px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.hero-area-2 .content-wrapper {
-  margin-top: 60px;
-}
-
-.hero-area-2 h1 {
-  width: 55%;
-}
-
-.hero-area-2 figure {
-  width: 30%;
-  margin-top: 50px;
-  margin-bottom: 60px;
-}
-
-.hero-area-2 h2 {
-  margin: 70px 180px 5px 0;
-  color: #262626;
-  text-transform: uppercase;
-}
-
-/* Whatsapp-btn-2 Styles*/
-/* Fixes the Whatsapp-btn-2 position*/
-.floating-btn-2 {
-  margin-bottom: 390px;
 }
 
 /*--------------------Mobile Styles - Gallery - Page-----------------------*/
@@ -587,7 +534,6 @@ article p {
   flex-direction: column;
   background-color: #F2EFDC;
   border: 2px solid #750021;
-  ;
   padding: 5px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
   border-radius: 4px;
@@ -625,39 +571,51 @@ article p {
 
 /*--------------------Mobile Styles - Services - Page-----------------------*/
 
+/* Services - section styles */
 
 .services {
-  min-height: 300px;
-  background-color: #E3D1A6;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  background: url('../img/services-img.jpg') center no-repeat;
+  background-size: cover;
 }
 
-/* Clear floats after container */
-.services-container::after {
-  content: "";
-  clear: both;
-  display: table;
+.services h2{
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: #F2EFDC;
+  letter-spacing: 1.2px;
+  text-align: center;
 }
 
-/* Float images inside the container to the left. */
-.services-container img {
-  float: left;
-  width: 60%;
+.services article {
+  width: 56%;
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
-.services-container ul {
-  float: left;
-  padding: 0;
-  margin-top: 200px;
+.services .services-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+   
+.services p {
+  text-align: center;
+  display: flex;
+  margin: 0;
+  color: #F2EFDC;
 }
 
-.services li {
-  font-family: 'Bebas Neue', cursive;
-  font-size: 1.675em;
-  font-weight: 400;
-  color: #750021;
-  text-transform: uppercase;
-  line-height: 5.7rem;
+.services i {
+  font-size: 3.75em;
+  margin-bottom: 40px; 
 }
+
 
 /* ==========================================================================
    Helper classes
@@ -753,237 +711,277 @@ article p {
 @media only screen and (min-width: 768px) {
   /*Tablet styles goes here*/
 
-  /*--------------------General - Styles -----------------------*/
-  .content-wrapper {
-    max-width: 640px;
-    margin: 50px 0;
-  }
+/*--------------------General - Styles -----------------------*/
+  
+.content-wrapper {
+  max-width: 640px;
+  margin: 50px 0;
+}
 
-  .header {
-    border-bottom: 1px solid rgba(10, 8, 4, 0.4);
-  }
+h1 {
+  font-size: 3.55em;
+  line-height: 1.1;
+}
 
-  .header li a {
-    border-bottom: none;
-  }
+h2 {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
 
-  h1 {
-    font-size: 3.25em;
-    line-height: 1.333;
-  }
-
-  h3 {
-    font-size: 1.5em;
-    line-height: 1.25;
-  }
-
-  /* Header - Styles*/
-  /* Hamburger menu styles*/
-
-  .header li {
-    float: left;
-  }
-
-  .header li a {
-    padding: 20px 30px;
-  }
-
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-  }
-
-  .header .menu-icon {
-    display: none;
-  }
-
-  /* Whatsapp-btn-Styles.*/
-  .floating-btn,
-  .floating-btn-2 {
-    width: 70px;
-    height: 70px;
-    bottom: 4px;
-    right: 40px;
-    font-size: 50px;
-    margin-bottom: 250px;
-  }
-
-  .my-float {
-    margin-top: 10px;
-  }
-
-  /* Footer styles*/
-
-  footer .content-wrapper {
-    width: 65%;
-    margin: 50px 0;
-  }
-
-  footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  footer .contact {
-    margin-bottom: 0;
-  }
-
-  footer h4 {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-  }
-
-  footer p {
-    line-height: 1.285;
-  }
-
-  footer .social-icons {
-    width: 12.5em;
-    justify-content: space-between;
-  }
-
-  footer .copyright {
-    width: 100%;
-  }
-
-  /*--------------------Home Page - Styles -----------------------*/
-  /* Hero - Styles */
-
-  .hero-area {
-    height: 840px;
-    background: url('../img/hero-img-tablet.jpg') center no-repeat;
-  }
-
-  .hero-area h1 {
-    font-size: 3em;
-    line-height: 1;
-    margin: 0;
+h3 {
+  font-size: 1.5em;
+  line-height: 1.25;
   }
   
-   /* Slider styles*/
+/* Header - Styles*/
+.header {
+  border-bottom: 1px solid rgba(10, 8, 4, 0.4);
+}
 
-   .slider {
-   
-  }
+/*Highlights the bottom border of the menu's button on hoover*/
+.header li a:hover {
+  background-color: transparent;
+}
 
-  .slides {
-   
-  }
+/*Keeps highlighted the current page*/
+.current {
+  background-color: #E3D1A6;
+  color: #262626;
+}
 
-  /* Reviews styles*/
+/* Hamburger menu styles*/
 
-  .reviews article {
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    text-align: left;
-    margin: 30px 0;
-  }
+.header li {
+  float: left;
+}
 
-  .reviews figure {
-    margin-right: 10px;
-  }
+.header li a {
+  padding: 20px 30px;
+  border-bottom: none;
+}
 
-  .reviews .comment-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-  }
+.header .menu {
+  clear: none;
+  float: right;
+  max-height: none;
+}
 
-  /*--------------------Gallery Page - Styles -----------------------*/
+.header .menu-icon {
+  display: none;
+}
 
-  .hero-area-2 {
-    height: 740px;
-    background: url('../img/hero-img-tablet.jpg') center no-repeat;
-  }
+/* Hero - Styles */
 
-  .hero-area-2 h1 {
-    font-size: 3em;
-    line-height: 1;
-    margin: 0;
-  }
+.hero-area {
+  min-height: 840px;
+}
 
-  .hero-area-2 h2{
-    display: none;
-  }
+.hero-top {
+  margin: 0 0 280px;
+}
+  
+.hero-top h1 {
+  width: 60%;
+}
 
-  .floating-btn-2 {
-    margin-bottom: 330px;
-  }
+.hero-top figure {
+  width: 30%;
+}
+  
+.hero-bottom h2 {
+  display: none;
+}
 
-  /* grid styles*/
+/* WhatsApp-btn-Styles.*/
+.whatsapp-btn {
+  width: 70px;
+  height: 70px;
+  bottom: 4px;
+  right: 40px;
+  font-size: 50px;
+  margin-bottom: 250px;
+}
 
-  .wide {
-    grid-column: span 2;
-  }
+.my-float {
+  margin-top: 10px;
+}
 
-  .tall {
-    grid-row: span 2;
-  }
+/* Footer styles*/
 
-  /*--------------------Services Page - Styles -----------------------*/
+footer .content-wrapper {
+  width: 65%;
+  margin: 50px 0;
+}
 
-  .services-container ul {
-    margin-top: 400px;
-  }
+footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
 
-  .services li {
-    font-size: 3.675rem;
-    line-height: 8.7rem;
-  }
+footer .contact {
+  margin-bottom: 0;
+}
+
+footer h4 {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+footer p {
+  line-height: 1.185;
+}
+
+footer .social-icons {
+  width: 12.5em;
+  justify-content: space-between;
+}
+
+footer .copyright {
+    width: 100%;
+}
+
+footer .copyright p {
+  font-size: .9em;
+}
+    
+/*--------------------Home Page - Styles -----------------------*/
+/* Reviews styles*/
+
+.reviews article {
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.reviews figure {
+  margin-right: 10px;
+}
+
+.reviews .comment-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+/*--------------------Gallery Page - Styles -----------------------*/
+/* Grid styles*/
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+/*--------------------Services Page - Styles -----------------------*/
+.services h2 {
+  margin-bottom: 20px;
+}
+     
+.services article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  flex-basis: 50%; 
+} 
+
+.services .services-item-description {
+  width: 50%;
+}
 }/*--------------------min-width: 768px Media queries ends here -----------------------*/
 
 @media only screen and (min-width: 1200px) {
-  /*Desktop styles here*/
+/*Desktop styles here*/
 
-  /*--------------------General - Styles -----------------------*/
-  .content-wrapper {
-    max-width: 960px;
-  }
+/*--------------------General - Styles -----------------------*/
+.content-wrapper {
+  max-width: 960px;
+  margin: 100px 0;
+}
 
-  h2 {
-    font-size: 2.25em;
-  }
+h1 {
+font-size: 4.75em;
+}
+
+h2 {
+  font-size: 2.75em;
+}
     
-  h3,
-  h4 {
-    font-size: 1.875em;
-  }
-    
-  p {
-    font-size: 1.125em;
-    line-height: 1.333;
-    }
+p {
+  font-size: 1.125em;
+  line-height: 1.333;
+}
+
+/*Header styles*/
+.header li a:hover {
+  border-bottom: 1px solid #F2EFDC;
+}
+
+/*WhatsApp button styles*/
+.whatsapp-btn {
+  margin-bottom: 50px;
+}
+
+footer h4 {
+font-size: 2em;
+}
+
+footer p {
+  font-size: 1.125em;
+  line-height: 1.333;
+}
+
+footer .copyright {
+  margin-top: 100px;
+}
 
 /*--------------------Homepage Styles -----------------------*/
   /* Hero - Styles*/
 
-  .hero-area {
-    background: url('../img/hero-img-desktop.jpg') center no-repeat;
-    background-size: cover;
-  }
+.hero-area {
+  min-height: 600px;
+ }
 
-  .hero-area h1 {
-  font-size: 3.75em;
-   width: 80%;
-  }
+ .hero-area .content-wrapper{
+   margin-bottom: 100px;
+ }
+ 
+.hero-top h1 {
+  width: 60%;
+}
 
-  /* Slider styles*/
+.hero-top figure {
+  width: 30%;
+}
 
-  slider {
-    
-  }
-
-  .slide {
-    
-  }
-
+.hero-bottom h2 {
+  display: none;
+}
   
-
+/* Reviews - Styles*/
+.reviews .content-wrapper {
+    width: 960px;
+}
+  
+/*--------------------Services Page - Styles -----------------------*/
+  .services h2 {
+  width: 90%;
+  margin: 50px;
+  text-align: center;
+}
+       
+.services article {
+  flex-basis: 33%; 
+} 
+  
 }/*--------------------min-width: 1200px Media queries ends here -----------------------*/
 
 @media print,
